@@ -1,0 +1,74 @@
+[
+  {
+    "vetId": 1,
+    "name": "Dr. Emily Carter",
+    "specialization": "Small Animal Care",
+    "experience": 8,
+    "rating": 4.9,
+    "email": "emily.carter@petcare.com",
+    "phone": "+1-201-555-1011",
+    "clinic": "Happy Paws Veterinary Clinic",
+    "availability": "Mon-Fri, 9 AM - 5 PM",
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2"
+  },
+  {
+    "vetId": 2,
+    "name": "Dr. Michael Lee",
+    "specialization": "Surgery & Emergency Care",
+    "experience": 12,
+    "rating": 4.8,
+    "email": "michael.lee@petcare.com",
+    "phone": "+1-201-555-1022",
+    "clinic": "CareVet Animal Hospital",
+    "availability": "24/7 Emergency",
+    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7"
+  },
+  {
+    "vetId": 3,
+    "name": "Dr. Sarah Johnson",
+    "specialization": "Pet Nutrition",
+    "experience": 6,
+    "rating": 4.7,
+    "email": "sarah.johnson@petcare.com",
+    "phone": "+1-201-555-1033",
+    "clinic": "Healthy Pets Clinic",
+    "availability": "Tue-Sat, 10 AM - 6 PM",
+    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7"
+  },
+  {
+    "vetId": 4,
+    "name": "Dr. David Martinez",
+    "specialization": "Dermatology",
+    "experience": 10,
+    "rating": 4.8,
+    "email": "david.martinez@petcare.com",
+    "phone": "+1-201-555-1044",
+    "clinic": "SkinCare Vet Center",
+    "availability": "Mon-Thu, 11 AM - 7 PM",
+    "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+  },
+  {
+    "vetId": 5,
+    "name": "Dr. Olivia Brown",
+    "specialization": "Dental Care",
+    "experience": 7,
+    "rating": 4.9,
+    "email": "olivia.brown@petcare.com",
+    "phone": "+1-201-555-1055",
+    "clinic": "Bright Smile Pet Clinic",
+    "availability": "Mon-Fri, 8 AM - 4 PM",
+    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7"
+  },
+  {
+    "vetId": 6,
+    "name": "Dr. James Wilson",
+    "specialization": "Exotic Animal Care",
+    "experience": 9,
+    "rating": 4.6,
+    "email": "james.wilson@petcare.com",
+    "phone": "+1-201-555-1066",
+    "clinic": "Exotic Pets Veterinary",
+    "availability": "Wed-Sun, 10 AM - 6 PM",
+    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7"
+  }
+]

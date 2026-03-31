@@ -1,0 +1,74 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+     "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Pet Boarding",
+    "providerName": "WarmPaws Retreat",
+    "providerEmail": "stay@warmpaws.com",
+    "price": 55,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Safe and cozy boarding facility with heated sleeping areas for pets during winter.",
+     "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1",
+    "category": "Boarding"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Winter Dog Walking Service",
+    "providerName": "SnowPaws Walkers",
+    "providerEmail": "walk@snowpaws.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Short, safe walks tailored for cold weather with protective gear for your dog.",
+    "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1",
+    "category": "Exercise"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Pet Nutrition Consultation for Winter",
+    "providerName": "HealthyTails Nutrition",
+    "providerEmail": "care@healthytails.com",
+    "price": 40,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Expert advice on adjusting your pet’s diet to maintain energy and warmth in colder months.",
+     "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1",
+    "category": "Nutrition"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Indoor Play & Socialization",
+    "providerName": "FurryFriends Club",
+    "providerEmail": "play@furryfriends.com",
+    "price": 28,
+    "rating": 4.8,
+    "slotsAvailable": 7,
+    "description": "Supervised indoor play sessions to keep pets active and social during harsh winter days.",
+     "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1",
+    "category": "Daycare"
+  }
+]
