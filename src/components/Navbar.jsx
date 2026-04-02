@@ -4,6 +4,7 @@ import { NavLink } from 'react-router';
 import Link from 'daisyui/components/link';
 import { AuthContext } from '../provider/AuthProvider';
 import { FaUserGraduate } from "react-icons/fa";
+import Snowfall from 'react-snowfall';
 
 const Navbar = () => {
   const {user,logOut,updateUser}=use(AuthContext);
@@ -55,6 +56,24 @@ const Navbar = () => {
          {
           user? <button onClick={handleLogout} className='text-sm md:text-md ml-3 hover:bg-orange-100 btn btn-soft btn-accent'><span>{user && user.email}</span>  <span className='text-red-900'>Logout</span></button>:  <NavLink className="btn" to="/auth/login">Login/Register</NavLink>
          }
+    </div>
+
+
+    <div style={{ position: "relative" }}>
+      
+      {/* ❄️ Snow effect */}
+      <Snowfall
+        style={{
+          position: "fixed",
+          width: "100%",
+          height: "100%",
+          zIndex: 9999,
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* Your routes */}
+      
     </div>
 
 

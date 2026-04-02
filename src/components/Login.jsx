@@ -1,8 +1,9 @@
-import React, { use, useState } from 'react';
+import React, { use, useRef, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../provider/AuthProvider';
 import toast from 'daisyui/components/toast';
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 //import { GoogleAuthProvider } from "firebase/auth";
 //import { auth } from '../firebase/firebase.config';
 //import { signInWithPopup } from 'firebase/auth';
@@ -11,10 +12,13 @@ const Login = () => {
 
   const [error,setError]=useState();
   const {signIn,signInWithGoogle}=use(AuthContext)
+  const emailRef=useRef();
   const location=useLocation();
   const navigate=useNavigate();
 
   //const provider = new GoogleAuthProvider();
+
+  const auth=getAuth();
 
 
 
@@ -59,6 +63,26 @@ const Login = () => {
   });
    }
 
+
+   const handleForgetPassword=()=>{
+    
+    console.log("forget password",emailRef.current.value);
+    const email= emailRef.current.value;
+
+    sendPasswordResetEmail(auth, email)
+  .then(() => {
+    alert("Password reset email sent!");
+    // ..
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorCode,errorMessage);
+    // ..
+  });
+    
+
+   }
     return (
         <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -74,14 +98,14 @@ const Login = () => {
 
           {/* email         */}
           <label className="label">Email</label>
-          <input name='email' type="email" className="input" placeholder="Email" />
+          <input name='email' type="email" className="input" placeholder="Email" ref={emailRef} />
           
           {/* password */}
           <label className="label">Password</label>
           <input name='password' type="password" className="input" placeholder="Password" />
           
           {/* forget password */}
-          <div><a className="link link-hover">Forgot password?</a></div>
+          <div onClick={handleForgetPassword}><a className="link link-hover">Forgot password?</a></div>
 
           {
             error && <p className='text-red-600'>{error}</p>

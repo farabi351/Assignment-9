@@ -15,6 +15,11 @@ import BookNow from "../components/BookNow";
 import AuthLayout from "../components/AuthLayout";
 import PrivateRoute from "../components/PrivateRoute";
 import Loading from "../components/Loading";
+import MySlider from "../components/MySlider";
+import { Suspense } from "react";
+import ExtraSection from "../components/ExtraSection";
+import CatTips from "../components/catTips";
+
 
 const router=createBrowserRouter(
 
@@ -28,10 +33,12 @@ const router=createBrowserRouter(
                     index: true,
                     element: (
                               <>
-                                <Slider />
+                                <MySlider></MySlider>
+                                {/* <Slider /> */}
                                 <WinterCareServices />
                                 <WinterCareTips></WinterCareTips>
                                 <MeetExpertVets></MeetExpertVets>
+                                <ExtraSection></ExtraSection>
                               </>
                              ),
                     
@@ -46,7 +53,9 @@ const router=createBrowserRouter(
                     return res.json();
                   },
                   hydrateFallbackElement:<Loading></Loading>,
-                  element: <Services></Services>
+                  element: <Suspense fallback={<Loading></Loading>}>
+                            <Services></Services>
+                          </Suspense>
 
                 },
 
@@ -78,6 +87,15 @@ const router=createBrowserRouter(
                          <MyProfile></MyProfile>
                   </PrivateRoute>)
 
+                },
+
+                {
+                    path:"/catTips",
+                    loader: async () => {
+                    const res = await fetch('/catTips.json');
+                    return res.json();
+                    },
+                    element:<CatTips></CatTips>
                 },
 
                 {

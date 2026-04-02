@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router';
 import { useLocation } from 'react-router';
 
 const MyProfile = () => {
-   const {user,updateUser}=use(AuthContext);
+   const {user,updateUser,updateMyEmail}=use(AuthContext);
    const navigate=useNavigate();
 
    const handleUpdateProfile=(e)=>{
@@ -14,6 +14,7 @@ const MyProfile = () => {
     //console.log(updateUser);
     const name=e.target.name.value;
     const url=e.target.url.value;
+    const email=e.target.email.value;
     //console.log(name,url);
     updateUser(
 
@@ -21,6 +22,13 @@ const MyProfile = () => {
          displayName: name,
          photoURL: url, 
        })
+
+
+       updateMyEmail({
+        email:email,
+   })
+
+              
 
     .then((result) => {
       //console.log(result);
@@ -53,8 +61,8 @@ const MyProfile = () => {
          <label className="label">Name</label>
          <input name='name' type="name" className="input" placeholder="Name" />
 
-         {/* <label className="label">Email</label>
-         <input name='email' type="email" className="input" placeholder="Email" /> */}
+         <label className="label">Email</label>
+         <input name='email' type="email" className="input" placeholder="Email" />
 
          <label className="label">Photo URL</label>
          <input name='url' type="url" className="input" placeholder="photo url" />

@@ -37,11 +37,11 @@ const Vets = () => {
   <div className="card-body items-start px-10 text-black">
     <h2 className="card-title">{c.name}</h2>
     <p className='btn btn-outline btn-secondary md:h-[25px]'>{c.specialization}</p>
-    <p className='font-bold text-blue-950 btn btn-outline btn-info'>{c.experience}</p>
-    <p className='font-bold text-blue-950 btn btn-outline btn-info'>{c.rating}</p>
-    <p className='font-bold text-blue-950 btn btn-outline btn-info'>{c.email}</p>
-    <p className='font-bold text-blue-950 btn btn-outline btn-info'>{c.phone}</p>
-    <p className='font-bold text-blue-950 btn btn-outline btn-info'>{c.availability}</p>
+    <p className='font-bold text-blue-950 btn btn-outline btn-info w-full border-transparent'>Experience:   {c.experience}</p>
+    <p className='font-bold text-blue-950 btn btn-outline btn-info w-full border-transparent'>Rating:  <span className='text-red-500'>{c.rating}</span></p>
+    <p className='font-bold text-blue-950 btn btn-outline btn-info w-full border-transparent'>{c.email}</p>
+    <p className='font-bold text-blue-950 btn btn-outline btn-info w-full border-transparent'>{c.phone}</p>
+    <p className='font-bold text-blue-950 btn btn-outline btn-info w-full border-transparent'>{c.availability}</p>
    {/* <div className='mx-15 my-10'>
          <div className="card-actions">
              <NavLink to="/bookNow" className="btn btn-primary">View Details</NavLink>

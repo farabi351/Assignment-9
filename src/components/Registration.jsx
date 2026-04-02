@@ -139,7 +139,7 @@ const Registration = () => {
             error&& <p className='text-red-600'>{error}</p>
           }
           
-          <div><a className="link link-hover">Forgot password?</a></div>
+          
           
           <button type='submit' className="btn btn-neutral mt-4">Register</button>
 

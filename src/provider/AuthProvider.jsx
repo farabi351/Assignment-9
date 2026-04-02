@@ -1,5 +1,5 @@
 import React, {createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut ,signInWithEmailAndPassword, updateProfile,signInWithPopup} from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut ,signInWithEmailAndPassword, updateProfile,signInWithPopup,updateEmail} from 'firebase/auth';
 import app from '../firebase/firebase.config';
 import { GoogleAuthProvider } from "firebase/auth";
 
@@ -51,23 +51,24 @@ const updateUser=async(userInfo)=>{
 
 };
 
-// const updateUser=()=>{
-//     return updateProfile(auth.currentUser, {
-//   displayName: "", name: ""
-// })
+const updateMyEmail=(userInfo)=>{
+
+    //updateEmail(auth.currentUser, userInfo);
+    //return updateMyEmail(auth.currentUser,userInfo);
+    
+
+};
+
+
+//     }).catch((error) => {
+
+//     });
+
+
+
 // }
 
-// updateProfile(auth.currentUser, {
-//   displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg"
-// }).then(() => {
-//   // Profile updated!
-//   // ...
-// }).catch((error) => {
-//   // An error occurred
-//   // ...
-// });
 
-//console.log(updateUser);
 
 
 
@@ -88,6 +89,11 @@ const logOut=()=>{
 
 
     }
+
+// const forgetPassword=()=>{
+
+
+// }
 
 
 
@@ -111,6 +117,7 @@ const logOut=()=>{
         signIn,
         updateUser,
         signInWithGoogle,
+        updateMyEmail,
 
     }
     return <AuthContext value={authData}>

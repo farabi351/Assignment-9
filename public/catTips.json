@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "remember": "Playtime",
+    "title": "Playtime is Essential",
+    "image": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=500&q=60",
+    "description": "Spend at least 15-20 minutes a day playing with your cat using toys like feather wands or laser pointers.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "remember": "Comfy Enough",
+    "title": "Provide Cozy Sleeping Spots",
+    "image": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=500&q=60",
+    "description": "Cats love warm, safe, and quiet places. Provide cozy beds or soft blankets in sunny spots.",
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "remember": "Cat Needs Treats",
+
+    "title": "Healthy Treats & Snacks",
+    "image": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=500&q=60",
+    "description": "Offer occasional healthy treats or catnip to reward your cat and keep them happy and active.",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "remember": "Cat needs shaving",
+    "title": "Groom Regularly",
+   "image": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=500&q=60",
+    "description": "Brush your cat’s fur regularly to prevent tangles and hairballs, keeping their coat healthy and shiny.",
+    "rating": 4
+  },
+  {
+    "id": 5,
+    "remember": "Cat Needs Scratching",
+    "title": "Provide Scratching Posts",
+    "image": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=500&q=60",
+    "description": "Cats love to scratch. Place scratching posts or pads to keep them entertained and protect your furniture.",
+    "rating": 5
+  },
+  {
+    "id": 6,
+    "remember": "Love Me",
+    "title": "Quality Time & Affection",
+   "image": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=500&q=60",
+    "description": "Spend quiet moments petting or cuddling your cat. Positive interaction builds trust and happiness.",
+    "rating": 5
+  }
+]
