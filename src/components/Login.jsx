@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../provider/AuthProvider';
 import toast from 'daisyui/components/toast';
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { FaCat } from "react-icons/fa";
 //import { GoogleAuthProvider } from "firebase/auth";
 //import { auth } from '../firebase/firebase.config';
 //import { signInWithPopup } from 'firebase/auth';
@@ -11,6 +12,7 @@ import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 const Login = () => {
 
   const [error,setError]=useState();
+  const [showPassword,setShowPassword]=useState(false);
   const {signIn,signInWithGoogle}=use(AuthContext)
   const emailRef=useRef();
   const location=useLocation();
@@ -83,6 +85,15 @@ const Login = () => {
     
 
    }
+
+
+   const handleToggleShowPassword=(event)=>{
+
+    event.preventDefault();
+    setShowPassword(!showPassword);
+
+
+  }
     return (
         <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -102,7 +113,11 @@ const Login = () => {
           
           {/* password */}
           <label className="label">Password</label>
-          <input name='password' type="password" className="input" placeholder="Password" />
+          <div className='relative'>
+          
+                      <input name='password' type={showPassword?'text':'password'} className="input" placeholder="Password" required/>
+                      <button onClick={handleToggleShowPassword} className="btn btn-xs absolute top-2 right-4"><FaCat color='green'/></button>
+                    </div>
           
           {/* forget password */}
           <div onClick={handleForgetPassword}><a className="link link-hover">Forgot password?</a></div>

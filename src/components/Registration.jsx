@@ -3,12 +3,14 @@ import { NavLink } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../provider/AuthProvider';
 import { useLocation,useNavigate } from 'react-router';
+import { FaCat } from "react-icons/fa";
 
 const Registration = () => {
 
   const {createUser,setUser,updateUser,signInWithGoogle}=use(AuthContext);
   const [nameError,setNameError]=useState("");
   const [error,setError]=useState("");
+  const [showPassword,setShowPassword]=useState(false);
 
   
 
@@ -100,6 +102,15 @@ const Registration = () => {
 
   }
 
+
+  const handleToggleShowPassword=(event)=>{
+
+    event.preventDefault();
+    setShowPassword(!showPassword);
+
+
+  }
+
    
 
     return (
@@ -133,8 +144,12 @@ const Registration = () => {
           
           {/* password */}
           <label className="label">Password</label>
-          <input name='password' type="password" className="input" placeholder="Password" required/>
+          
+          <div className='relative'>
 
+            <input name='password' type={showPassword?'text':'password'} className="input" placeholder="Password" required/>
+            <button onClick={handleToggleShowPassword} className="btn btn-xs absolute top-2 right-4"><FaCat color='green'/></button>
+          </div>
           {
             error&& <p className='text-red-600'>{error}</p>
           }

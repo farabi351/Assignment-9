@@ -27,13 +27,13 @@ const CatTips = () => {
   </figure>
   <div className="card-body items-start px-10 text-black">
     <h2 className="card-title btn btn-accent">{c.remember}</h2>
-    <p>{c.title}</p>
-    <p>{c.description}</p>
-   {/* <div className='mx-15 my-10'>
+    <p className="font-bold">{c.title}</p>
+    <p className='font-semibold'>{c.description}</p>
+   <div className=''>
          <div className="card-actions">
-             <NavLink to="/bookNow" className="btn btn-primary">View Details</NavLink>
+             <NavLink to="/bookNow" className="btn btn-primary">Talk With Our Experts</NavLink>
          </div>
-   </div> */}
+   </div>
   </div>
 </div>
               ))

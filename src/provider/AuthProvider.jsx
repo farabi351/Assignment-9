@@ -1,7 +1,9 @@
 import React, {createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut ,signInWithEmailAndPassword, updateProfile,signInWithPopup,updateEmail} from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut ,signInWithEmailAndPassword, updateProfile,signInWithPopup,sendEmailVerification,updateEmail,verifyBeforeUpdateEmail} from 'firebase/auth';
 import app from '../firebase/firebase.config';
 import { GoogleAuthProvider } from "firebase/auth";
+import { a } from '@react-spring/web';
+import { useNavigate } from 'react-router';
 
 export const AuthContext=createContext();
 
@@ -11,6 +13,8 @@ const auth=getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({children}) => {
+
+    //
 
     const [user,setUser]=useState(null);
 
@@ -48,25 +52,49 @@ const updateUser=async(userInfo)=>{
 
     //return updateProfile(auth.currentUser,userInfo);
     setUser({ ...auth.currentUser });
+   // nav("/");
 
 };
 
-const updateMyEmail=(userInfo)=>{
+const emailVerify=()=>{
 
-    //updateEmail(auth.currentUser, userInfo);
-    //return updateMyEmail(auth.currentUser,userInfo);
-    
-
-};
+    return sendEmailVerification(auth.currentUser);     
+}
 
 
-//     }).catch((error) => {
+const updateMyEmail = (email) => {
+  return verifyBeforeUpdateEmail(auth.currentUser, email)
+    // .then(() => updateMyEmail(email)) 
+}
 
-//     });
+// const updateMyEmail=async(myEmail)=>{
+//     await updateEmail(auth.currentUser,myEmail);
+//     setUser({ ...auth.currentUser });
+// }
 
 
+// const updateMyEmail=async (email)=>{
+
+//     updateEmail(auth.currentUser,email);
 
 // }
+
+// const verifyEmail=()=>{
+
+//     return sendEmailVerification(auth.currentUser);     
+// }
+// const updateMyEmail=async (userInfo)=>{
+
+//     await updateEmail(...auth.currentUser,userInfo);
+
+//    // console.log(userInfo.email);
+//    setUser({ ...auth.currentUser });
+
+    
+
+// }
+
+
 
 
 
@@ -118,6 +146,8 @@ const logOut=()=>{
         updateUser,
         signInWithGoogle,
         updateMyEmail,
+        emailVerify,
+        
 
     }
     return <AuthContext value={authData}>

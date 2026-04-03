@@ -4,18 +4,20 @@ import { use} from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router';
 import { useLocation } from 'react-router';
+import { verifyBeforeUpdateEmail } from 'firebase/auth';
 
 const MyProfile = () => {
-   const {user,updateUser,updateMyEmail}=use(AuthContext);
+   const {user,updateUser,emailVerify,updateMyEmail}=use(AuthContext);
    const navigate=useNavigate();
 
    const handleUpdateProfile=(e)=>{
     e.preventDefault();
-    //console.log(updateUser);
+    console.log(updateUser);
     const name=e.target.name.value;
     const url=e.target.url.value;
-    const email=e.target.email.value;
-    //console.log(name,url);
+    //const email=e.target.email.value;
+    //console.log(name,url,email);
+    console.log(user.email);
     updateUser(
 
         {
@@ -23,15 +25,30 @@ const MyProfile = () => {
          photoURL: url, 
        })
 
+      //  .then(() => updateMyEmail(email))
+      //  .then(() => verifyEmail())
 
-       updateMyEmail({
-        email:email,
-   })
+      // updateMyEmail({email})
 
+      // updateEmail(auth.currentUser,updateMyEmail)
+
+      // emailVerify(email.target.email.value)
+
+      // .then(() => updateMyEmail(email))     
+
+      //updateMyEmail(email)
+
+      // .then(() => updateMyEmail(email))
+
+       //.then(() => updateMyEmail(email)) 
+
+
+      
+      
               
 
     .then((result) => {
-      //console.log(result);
+      console.log(result);
       navigate(`${location.state?location.state:"/"}`);
     })
     .catch((error) => {
@@ -61,8 +78,8 @@ const MyProfile = () => {
          <label className="label">Name</label>
          <input name='name' type="name" className="input" placeholder="Name" />
 
-         <label className="label">Email</label>
-         <input name='email' type="email" className="input" placeholder="Email" />
+         {/* <label className="label">Email</label>
+         <input name='email' type="email" className="input" placeholder="Email" /> */}
 
          <label className="label">Photo URL</label>
          <input name='url' type="url" className="input" placeholder="photo url" />
